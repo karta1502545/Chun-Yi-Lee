@@ -1,4 +1,4 @@
-baseURL: ""
+baseURL: "https://chun-yi-lee.netlify.app/"
 title: Chun-Yi Lee
 paginate: 6
 theme: PaperMod
