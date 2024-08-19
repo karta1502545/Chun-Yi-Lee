@@ -1,6 +1,7 @@
 ---
 title: "How to Build a FREE Personal Website IN 1 HOUR?"
 date: "2024-08-19T00:19:48+08:00"
+tags: ["Personal Website", "Tutorial"]
 draft: false
 ---
 如何在一小時內建立你的個人網頁？而且還免費！？
