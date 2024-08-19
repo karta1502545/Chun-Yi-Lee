@@ -114,9 +114,9 @@ params:
 
 menu:
   main:
-    - identifier: archives
-      name: Archives
-      url: /archives/
+    - identifier: archive
+      name: Archive
+      url: /archive/
       weight: 10
     - identifier: blog
       name: Blog

@@ -89,9 +89,9 @@ Web Server is available at //localhost:1313/ (bind address 127.0.0.1)
 ```yaml
 menu:
   main:
-    - identifier: archives
-      name: Archives
-      url: /archives/
+    - identifier: archive
+      name: Archive
+      url: /archive/
       weight: 10
     - identifier: blog
       name: Blog
@@ -133,8 +133,8 @@ params:
     imageHeight: 260
     imageTitle: Chun-Yi's handsome headshot
     buttons:
-      - name: Posts
-        url: posts
+      - name: Blog
+        url: blog
       - name: Tags
         url: tags
 ```
@@ -163,13 +163,13 @@ experiences, projects的建構同以上流程。
 
 ### 設置Archive頁面
 ```Archive```頁面可以讓使用者根據時間線查看你的貼文。
-你只需要在```content```底下新增一個```archives.md```，把以下模板貼上去，就完成了。
+你只需要在```content```底下新增一個```archive.md```，把以下模板貼上去，就完成了。
 ```markdown
 ---
-title: "Archives"
-layout: "archives"
-url: "/archives/"
-summary: archives
+title: "Archive"
+layout: "archive"
+url: "/archive/"
+summary: archive
 ---
 ```
 
