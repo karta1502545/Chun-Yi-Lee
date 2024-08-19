@@ -82,7 +82,7 @@ Web Server is available at //localhost:1313/ (bind address 127.0.0.1)
 ---
 
 ## 客製化網頁
-接下來就是客製化了，建議你先複製我的[hugo.yaml]()，再根據以下教學修改參數。如果你跟著教學做遇到問題，可以直接參考我的[GitHub](https://github.com/karta1502545)中```content```及```hugo.yaml```的設定。
+接下來就是客製化了，建議你先複製我GitHub上的[hugo.yaml](https://github.com/karta1502545/Chun-Yi-Lee)，再根據以下教學修改參數。如果你跟著教學做遇到問題，可以直接參考我的[GitHub](https://github.com/karta1502545)中```content```及```hugo.yaml```的設定。
 
 基本上你需要做這幾件事：
 ### 決定右上角的menu有哪些頁面
