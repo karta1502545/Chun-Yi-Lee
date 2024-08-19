@@ -92,9 +92,9 @@ menu:
       name: Archives
       url: /archives/
       weight: 10
-    - identifier: blogs
-      name: Blogs
-      url: /blogs/
+    - identifier: blog
+      name: Blog
+      url: /blog/
       weight: 20
     - identifier: projects
       name: Projects
@@ -137,14 +137,14 @@ params:
       - name: Tags
         url: tags
 ```
-### 在Blogs底下創建貼文
+### 在Blog資料夾底下創建貼文
 
-你只需要在```content```底下建立```blogs```資料夾，並在底下新增一個```firstPost.md```，把以下模板貼上去，就完成了。
+你只需要在```content```底下建立```blog```資料夾，並在底下新增一個```firstPost.md```，把以下模板貼上去，就完成了。
 
 結構如下：
 ```
 content/
-└── blogs/
+└── blog/
     └── firstPost.md
 ```
 
