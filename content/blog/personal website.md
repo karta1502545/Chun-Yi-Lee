@@ -139,7 +139,7 @@ This is how my website menu is set up. Higher weight means it appears further to
 ### Set your profile picture and intro on the homepage
 
 Put a photo in the ```static``` directory and specify the path in ```hugo.yaml```.
-I put my profile picture in an ```img``` folder under ```static```.
+I put my profile picture named `headPhoto.jpg` in an ```img``` folder under ```static```.
 
 ```yaml
 params:
@@ -173,7 +173,7 @@ content/
 
 ```markdown
 ---
-title: "VideoToText"
+title: "firstPost"
 date: "2024-08-18T23:59:48+08:00"
 draft: false
 ---
@@ -182,11 +182,20 @@ draft: false
 Hello, welcome to my first post!
 ```
 
-The setup for experience and project follows the same process as the blog setup mentioned above.
+Here are a few reminders:
+
+* Change `title` to the desired title and update the time to the creation time of the post.
+* If `draft` is set to `true`, the post will not be deployed to the website.
+* The process for creating `experience` and `project` follows the same steps as creating a blog post.
+
+The setup for `experience` and `project` follows the same process as the blog setup mentioned above.
+
+TODO
 
 ### Set up the Archive page
-The ```Archive``` page lets users view your posts by timeline.
-Create an ```archive.md``` file under ```content``` and paste the following template.
+The `Archive` page lets users view your posts by timeline.
+Create an `archive.md` file under `content` and paste the following template.
+
 ```markdown
 ---
 title: "Archive"
@@ -226,7 +235,7 @@ outputs:
 Now, publish your website online. 
 I won’t go into details; follow [this tutorial video](https://youtu.be/hjD9jTi_DQ4?list=PLeiDFxcsdhUrzkK5Jg9IZyiTsIMvXxKZP&t=2230) for the deployment process—it takes about ten minutes.
 
-You don't need to do ```add theme``` and ```git``` since these have been done in previous step.
+You don't need to do `add theme` and `git` since these have been done in previous step.
 
 However, you do need to create a repository on GitHub, and push your local directory to your repository. Netlify automatically pull your repo from GitHub, and publish it.
 
@@ -306,7 +315,7 @@ $ hugo version # 將顯示 Hugo版本 (hugo v0.133.0...)
 ```
 
 ### Step 2: 使用PaperMod建立網頁模版
-```PaperMod```的版面非常地簡潔乾淨，具備個人網站必備的Profile, Home, Search Template, Archive等功能。
+`PaperMod`的版面非常地簡潔乾淨，具備個人網站必備的Profile, Home, Search Template, Archive等功能。
 創建貼文也相當容易，只要新增資料夾和markdown(.md)檔案即可。常見功能如新增圖片、連結等都能非常方便地處理完成。
 甚至支援Google Analytics, SEO等進階功能。(我還沒研究這部分，目前只是想先架個workable的網站)
 
@@ -338,12 +347,12 @@ Environment: "development"
 Serving pages from disk
 Web Server is available at //localhost:1313/ (bind address 127.0.0.1) 
 ```
-這樣就完成初版網頁了，你可以到瀏覽器上輸入```localhost:1313```看看網頁的樣子。
+這樣就完成初版網頁了，你可以到瀏覽器上輸入`localhost:1313`看看網頁的樣子。
 
 ---
 
 ## 客製化網頁
-接下來就是客製化了，建議你先複製我GitHub上的[hugo.yaml](https://github.com/karta1502545/Chun-Yi-Lee)，再根據以下教學修改參數。如果你跟著教學做遇到問題，可以直接參考我的[GitHub](https://github.com/karta1502545)中```content```及```hugo.yaml```的設定。
+接下來就是客製化了，建議你先複製我GitHub上的[hugo.yaml](https://github.com/karta1502545/Chun-Yi-Lee)，再根據以下教學修改參數。如果你跟著教學做遇到問題，可以直接參考我的[GitHub](https://github.com/karta1502545)中`content`及`hugo.yaml`的設定。
 
 基本上你需要做這幾件事：
 ### 決定右上角的menu有哪些頁面
@@ -377,10 +386,12 @@ menu:
 ```
 我的個人網頁設定是這樣，weight越大會被擺到越右邊。
 
+每個`identifier`會對應到`content`底下的同名資料夾，所以除了在`hugo.yaml`設定menu要有哪些page之外，也要到`content`下創建相對應的資料夾！
+
 ### 設定初始頁面的頭貼和簡介
 
-這邊要在```static```裡面放一張照片，並在```hugo.yaml```上寫上圖片位置。
-我是在```static```底下創個```img```資料夾，然後把頭貼放在裡面。
+這邊要在`static`裡面放一張照片，並在`hugo.yaml`上寫上圖片位置。
+我是在`static`底下創個`img`資料夾，然後把頭貼`headPhoto.jpg`放在裡面。
 ```yaml
 params:
   ...
@@ -412,7 +423,7 @@ content/
 
 ```markdown
 ---
-title: "VideoToText"
+title: "firstPost"
 date: "2024-08-18T23:59:48+08:00"
 draft: false
 ---
@@ -420,7 +431,10 @@ draft: false
 ## This is my first post!
 Hello welcome to my first post!
 ```
-experience, project的建立方式同以上建立blog的流程。
+這邊有幾個提醒：
+* ```title```改成你想要的標題，時間改成該貼文的創建時間，
+* ```draft```設為```true```的話，該貼文就不會部署到網頁上。
+* ```experience```和```project```的建立方式，同以上建立blog的流程。
 
 ### 設置Archive頁面
 ```Archive```頁面可以讓使用者根據時間線查看你的貼文。
