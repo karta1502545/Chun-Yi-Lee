@@ -106,16 +106,21 @@ Environment: "development"
 Serving pages from disk
 Web Server is available at //localhost:1313/ (bind address 127.0.0.1) 
 ```
-Your basic website is now ready! Open your browser and go to ```localhost:1313``` to see it.
+Your basic website is now ready! Open your browser and go to `localhost:1313` to see it.
 
 ---
 
 ## Customizing Your Website
-Next, you can customize your site. I recommend copying my [hugo.yaml](https://github.com/karta1502545/Chun-Yi-Lee) from GitHub and then adjusting the settings based on the guide below. If you have issues, you can refer to my [GitHub settings](https://github.com/karta1502545) under ```content``` and ```hugo.yaml```.
+Next, you can customize your site. Before running the following tutorial, please copy my [hugo.yaml](https://github.com/karta1502545/Chun-Yi-Lee) to your `hugo.yaml`. If you have issues, you can refer to my [GitHub settings](https://github.com/karta1502545/Chun-Yi-Lee) under `content` and `hugo.yaml` or [Offical Wiki](https://github.com/adityatelange/hugo-PaperMod).
 
 Here’s what you need to do:
 
 ### Set the top-right menu
+
+Here's how my `hugo.yaml` is set up: the larger the `weight`, the further to the right it will be positioned.
+
+Each `identifier` corresponds to a folder with the same name under `content`. So, in addition to configuring which pages should be in the menu in `hugo.yaml`, you also need to create the corresponding folders under `content`!
+
 ```yaml
 menu:
   main:
@@ -144,7 +149,6 @@ menu:
       url: yourCVURL
       weight: 60
 ```
-This is how my website menu is set up. Higher weight means it appears further to the right.
 
 ### Set your profile picture and intro on the homepage
 
@@ -211,6 +215,15 @@ layout: "archive"
 url: "/archive/"
 summary: archive
 ---
+```
+
+To display (or hide) posts from the `blog` or other folders under `content` on the `Archive` page, you can add (or remove) the folder name in the `mainSections` section of `hugo.yaml`. The `Archive` page will then include (or exclude) all `.md` files under that folder.
+
+```markdown
+params:
+  mainSections:
+  - blog
+  ...
 ```
 
 ### Set up the Search page
@@ -370,10 +383,15 @@ Web Server is available at //localhost:1313/ (bind address 127.0.0.1)
 ---
 
 ## 客製化網頁
-接下來就是客製化了，建議你先複製我GitHub上的[hugo.yaml](https://github.com/karta1502545/Chun-Yi-Lee)，再根據以下教學修改參數。如果你跟著教學做遇到問題，可以直接參考我的[GitHub](https://github.com/karta1502545)中`content`及`hugo.yaml`的設定。
+接下來，你可以開始自訂你的網站。在進行下面的教學之前，請先把我的 [hugo.yaml](https://github.com/karta1502545/Chun-Yi-Lee) 複製到你的 `hugo.yaml`。如果有遇到問題，可以參考我在 [GitHub 上的設定](https://github.com/karta1502545/Chun-Yi-Lee)，看 `content` 和 `hugo.yaml` 裡面的內容，或者查查 [官方 Wiki](https://github.com/adityatelange/hugo-PaperMod)。
 
 基本上你需要做這幾件事：
 ### 決定右上角的menu有哪些頁面
+
+我的`hugo.yaml`設定是這樣，weight越大會被擺到越右邊。
+
+每個`identifier`會對應到`content`底下的同名資料夾，所以除了在`hugo.yaml`設定menu要有哪些page之外，也要到`content`下創建相對應的資料夾！
+
 ```yaml
 menu:
   main:
@@ -402,9 +420,6 @@ menu:
       url: yourCVURL
       weight: 60
 ```
-我的個人網頁設定是這樣，weight越大會被擺到越右邊。
-
-每個`identifier`會對應到`content`底下的同名資料夾，所以除了在`hugo.yaml`設定menu要有哪些page之外，也要到`content`下創建相對應的資料夾！
 
 ### 設定初始頁面的頭貼和簡介
 
@@ -464,6 +479,15 @@ layout: "archive"
 url: "/archive/"
 summary: archive
 ---
+```
+
+如果要讓`Archive`頁面中，顯示(或隱藏)`blog`或其他`content`底下資料夾的貼文，可以在`hugo.yaml`的`mainSections`加上(或刪掉)該資料夾名稱，`Archive`就會將該資料夾底下的`.md`檔案都納入(或排除)。
+
+```markdown
+params:
+  mainSections:
+  - blog
+  ...
 ```
 
 ### 設置Search頁面
