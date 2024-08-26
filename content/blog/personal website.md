@@ -20,6 +20,7 @@ I tried setting up a website before but ran into some issues:
 After some searching, I found Hugo’s PaperMod Theme. It has a clean layout and solved all my problems. Plus, it’s super easy to use!
 
 [comment]: <# why you need a personal website?>
+[comment]: <# project structure (content, static, themes, hugo.yaml)>
 
 ---
 ## What resources did I use?
