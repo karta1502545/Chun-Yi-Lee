@@ -22,6 +22,16 @@ After some searching, I found Hugo’s PaperMod Theme. It has a clean layout and
 [comment]: <# why you need a personal website?>
 
 ---
+## What should you know before start?
+Basically, the process can be NO CODE!!! But there are still something you need to know.
+
+* How to use Terminal / Console (for building up the website)
+* Git, GitHub (for pushing your website to GitHub)
+* MarkDown Syntax (for creating post)
+* YAML Syntax (for website configuration)
+
+They are pretty easy to learn, especially when it's an era that you can copy and paste these terms on ChatGPT.
+
 ## What resources did I use?
 You can either follow the resources I used or follow my simplified steps to get your website up quickly.
 
@@ -190,8 +200,6 @@ Here are a few reminders:
 
 The setup for `experience` and `project` follows the same process as the blog setup mentioned above.
 
-TODO
-
 ### Set up the Archive page
 The `Archive` page lets users view your posts by timeline.
 Create an `archive.md` file under `content` and paste the following template.
@@ -267,12 +275,22 @@ Thanks for reading! If you found this article helpful, please share it with your
 在網路上搜尋一陣子後，看到Hugo的PaperMod Theme簡潔的版面及資料夾結構，加上GitHub上有**9.4K**顆星星，就決定試看看它了，沒想到真的解決了以上痛點，而且操作上非常容易！
 
 ---
+## 開始前須要有什麼背景知識？
+基本上，這整個過程可以完全不用寫程式碼！但還是有幾件事情你需要知道：
+
+* 怎麼用終端機/控制台（用來架設網站）
+* Git、GitHub（用來把你的網站推上 GitHub）
+* MarkDown 語法（用來寫文章）
+* YAML 語法（用來設定網站）
+
+這些概念都蠻容易上手的，尤其是現在這個有 ChatGPT 當小老師的時代，直接把這些術語複製貼上到 ChatGPT 上查就能很快學會了。
+
 ## 我參考了哪些資料？
 你可以看參考資料自行完成個人網站的架設，也可以直接使用我提供的簡化版文字教學來快速完成。
 
-我首先看了[這個YouTube影片](https://www.youtube.com/watch?v=hjD9jTi_DQ4&list=PLeiDFxcsdhUrzkK5Jg9IZyiTsIMvXxKZP&index=1&t=2s)，約1小時長，這位老兄講得很簡單，手把手帶你如何使用hugo的papermod theme建立基礎的個人網站，跟著做完之後，會對Hugo開發有基礎的認知，網站雛形也出來了。
+我首先看了[這個 YouTube 影片](https://www.youtube.com/watch?v=hjD9jTi_DQ4&list=PLeiDFxcsdhUrzkK5Jg9IZyiTsIMvXxKZP&index=1&t=2s)，約1小時長，這位老兄講得很簡單，手把手帶你如何使用hugo的papermod theme建立基礎的個人網站，跟著做完之後，會對Hugo開發有基礎的認知，網站雛形也出來了。
 
-由於上述影片中沒有提到進階功能怎麼設定，所以我接著參考[PaperMod的GitHub](https://github.com/adityatelange/hugo-PaperMod)，裡面有default模板可供參考。
+由於上述影片中沒有提到進階功能怎麼設定，所以我接著參考[ PaperMod 的 GitHub](https://github.com/adityatelange/hugo-PaperMod)，裡面有default模板可供參考。
 
 ## 實作你的網頁
 我們先來看看專案架構長什麼樣子。了解架構後再實作，過程會比較順利。
