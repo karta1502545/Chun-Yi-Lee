@@ -10,7 +10,7 @@ draft: false
 (Translated by ChatGPT)
 
 ## Introduction
-Recently, I’ve been learning a lot and thought it’d be great to share my knowledge online. That’s how I started building my personal website!
+Recently, I’ve been learning a lot and thought it’d be great to share my knowledge online. That’s why I started building my personal website!
 
 I tried setting up a website before but ran into some issues:
 * Good themes cost money.
@@ -18,6 +18,8 @@ I tried setting up a website before but ran into some issues:
 * Deployment and maintenance were complicated.
 
 After some searching, I found Hugo’s PaperMod Theme. It has a clean layout and solved all my problems. Plus, it’s super easy to use!
+
+[comment]: <# why you need a personal website?>
 
 ---
 ## What resources did I use?
