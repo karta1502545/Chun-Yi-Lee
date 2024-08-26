@@ -7,8 +7,6 @@ draft: false
 
 [中文版](#中文版)
 
-# How to build your personal website in just one hour? And it’s FREE!?
-
 (Translated by ChatGPT)
 
 ## Introduction
@@ -268,7 +266,7 @@ $ hugo version # 將顯示 Hugo版本 (hugo v0.133.0...)
 我覺得[這個利用PaperMod開發的個人網站](https://arkalim.netlify.app/)做得還不錯，可供參考。
 
 ```bash
-# 建立你的網站並進入該資料夾中
+# 建立你的網站資料夾並進入該資料夾中
 $ hugo new site yourWebsiteName --format yaml # 把yourWebsiteName改成你想要的網站名稱
 $ cd yourWebsiteName # 把yourWebsiteName改成你想要的網站名稱
 
