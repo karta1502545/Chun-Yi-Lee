@@ -226,6 +226,10 @@ outputs:
 Now, publish your website online. 
 I won’t go into details; follow [this tutorial video](https://youtu.be/hjD9jTi_DQ4?list=PLeiDFxcsdhUrzkK5Jg9IZyiTsIMvXxKZP&t=2230) for the deployment process—it takes about ten minutes.
 
+You don't need to do ```add theme``` and ```git``` since these have been done in previous step.
+
+However, you do need to create a repository on GitHub, and push your local directory to your repository. Netlify automatically pull your repo from GitHub, and publish it.
+
 ## What else can you do?
 1. Add like and comment sections.
 2. Learn how to embed photos and YouTube videos in your posts.
@@ -458,6 +462,10 @@ outputs:
 ## 部署網站
 現在要把剛剛開發好的個人網站publish到Internet上。
 這邊不多贅述，請參考[此教學影片](https://youtu.be/hjD9jTi_DQ4?list=PLeiDFxcsdhUrzkK5Jg9IZyiTsIMvXxKZP&t=2230)，部署流程大約十分鐘。
+
+你不需要再做`add theme` 和 `git`相關操作，因為之前已經完成了。
+
+不過，你需要在 GitHub 上建立一個repository，然後把你的本地資料夾推送到這個repo。Netlify 會自動從 GitHub 拉取你的repo並部署網站。
 
 ## 你還可以做的事
 1. 新增按讚、評論欄位
