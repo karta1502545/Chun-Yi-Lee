@@ -5,7 +5,220 @@ tags: ["Personal Website", "Tutorial"]
 draft: false
 ---
 
-[English Version](#english-version)
+[中文版](#中文版)
+
+# How to build your personal website in just one hour? And it’s FREE!?
+
+(Translated by ChatGPT)
+
+## Introduction
+Recently, I’ve been learning a lot and thought it’d be great to share my knowledge online. That’s how I started building my personal website!
+
+I tried setting up a website before but ran into some issues:
+* Good themes cost money.
+* Free themes were hard to customize without lots of HTML/CSS work.
+* Deployment and maintenance were complicated.
+
+After some searching, I found Hugo’s PaperMod Theme. It has a clean layout and solved all my problems. Plus, it’s super easy to use!
+
+---
+## What resources did I use?
+You can either follow the resources I used or follow my simplified steps to get your website up quickly.
+
+First, I watched [this YouTube video](https://www.youtube.com/watch?v=hjD9jTi_DQ4&list=PLeiDFxcsdhUrzkK5Jg9IZyiTsIMvXxKZP&index=1&t=2s), which is about 1 hour long. The video guides you through building a basic website using Hugo’s PaperMod theme. By the end, you’ll have a good understanding of Hugo and a working site.
+
+Since the video doesn’t cover advanced features, I also checked out the [PaperMod GitHub page](https://github.com/adityatelange/hugo-PaperMod) for more details.
+
+## Steps
+Now, let’s get into how to set up your website.
+
+The steps below are based on [PaperMod’s installation guide](https://github.com/adityatelange/hugo-PaperMod/wiki/Installation#getting-started-) (using macOS as an example; for other systems, refer to the official docs). Follow these steps, and if you run into issues, you can search for solutions.
+
+### Step 1: Install Homebrew and Hugo
+**Homebrew** is a package manager for macOS that makes it easy to install and manage software.
+
+**Hugo** is a fast, Go-based static site generator that’s easy to use and has many themes, so you can create and deploy a website without touching the code.
+```bash
+# Open Terminal, install Homebrew, and check the installation
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+$ brew -v # Displays the Homebrew version (Homebrew 4.3.16)
+
+# Install Hugo using Homebrew and verify it
+$ brew install hugo
+$ hugo version # Displays the Hugo version (hugo v0.133.0...)
+```
+
+### Step 2: Use PaperMod to create your website
+The ```PaperMod``` theme is clean and simple, with features like Profile, Home, Search, and Archive. Creating posts is easy—just add a folder and a markdown file. You can also easily add images, links, and more.
+
+You can see a good example of a [personal website built with PaperMod here](https://arkalim.netlify.app/).
+
+```bash
+# Create your website and navigate to its folder
+$ hugo new site yourWebsiteName --format yaml # Replace yourWebsiteName with your desired name
+$ cd yourWebsiteName
+
+# Initialize git
+$ git init
+
+# Add the PaperMod theme as a git submodule
+$ git submodule add --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
+$ git submodule update --init --recursive
+
+# Keep the submodule up to date without overwriting local changes
+$ git submodule update --remote --merge
+
+# Set PaperMod as your theme
+$ echo "theme: PaperMod" >> hugo.yaml
+
+# Start the server
+$ hugo server
+...
+Built in 49 ms
+Environment: "development"
+Serving pages from disk
+Web Server is available at //localhost:1313/ (bind address 127.0.0.1) 
+```
+Your basic website is now ready! Open your browser and go to ```localhost:1313``` to see it.
+
+---
+
+## Customizing Your Website
+Next, you can customize your site. I recommend copying my [hugo.yaml](https://github.com/karta1502545/Chun-Yi-Lee) from GitHub and then adjusting the settings based on the guide below. If you have issues, you can refer to my [GitHub settings](https://github.com/karta1502545) under ```content``` and ```hugo.yaml```.
+
+Here’s what you need to do:
+
+### Set the top-right menu
+```yaml
+menu:
+  main:
+    - identifier: archive
+      name: Archive
+      url: /archive/
+      weight: 10
+    - identifier: blog
+      name: Blog
+      url: /blog/
+      weight: 20
+    - identifier: projects
+      name: Projects
+      url: /projects/
+      weight: 30
+    - identifier: experiences
+      name: Experiences
+      url: /experiences/
+      weight: 40
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 50
+    - identifier: CV
+      name: CV
+      url: yourCVURL
+      weight: 60
+```
+This is how my website menu is set up. Higher weight means it appears further to the right.
+
+### Set your profile picture and intro on the homepage
+
+Put a photo in the ```static``` directory and specify the path in ```hugo.yaml```.
+I put my profile picture in an ```img``` folder under ```static```.
+
+```yaml
+params:
+  ...
+  # profile-mode
+  profileMode:
+    enabled: true # needs to be explicitly set
+    title: Chun-Yi Lee
+    subtitle: "A curious software engineer who explores all kinds of tech and loves making it easy for others to understand."
+    imageUrl: "img/headPhoto.jpg"
+    imageWidth: 240
+    imageHeight: 260
+    imageTitle: Chun-Yi's handsome headshot
+    buttons:
+      - name: Blog
+        url: blog
+      - name: Tags
+        url: tags
+```
+
+### Create a post in the Blog folder
+
+Create a ```blog``` folder under ```content```, then create a ```firstPost.md``` file and paste the following template.
+
+The structure should look like this:
+```
+content/
+└── blog/
+    └── firstPost.md
+```
+
+```markdown
+---
+title: "VideoToText"
+date: "2024-08-18T23:59:48+08:00"
+draft: false
+---
+
+## This is my first post!
+Hello, welcome to my first post!
+```
+
+### Set up the Archive page
+The ```Archive``` page lets users view your posts by timeline.
+Create an ```archive.md``` file under ```content``` and paste the following template.
+```markdown
+---
+title: "Archive"
+layout: "archive"
+url: "/archive/"
+summary: archive
+---
+```
+
+### Set up the Search page
+The ```Search``` page lets users search your post titles and content.
+Create a ```search.md``` file under ```content```, paste the following template, and add a few lines of code in ```hugo.yaml```.
+
+```markdown
+---
+title: "Search" # in any language you want
+layout: "search" # necessary for search
+url: "/search/"
+# description: "Description for Search"
+summary: "search"
+placeholder: "type in your keywords.."
+---
+```
+
+```yaml
+# (in the end of hugo.yaml, add these lines)
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # necessary for search
+```
+
+---
+
+## Deploying Your Website
+Now, publish your website online. 
+I won’t go into details; follow [this tutorial video](https://youtu.be/hjD9jTi_DQ4?list=PLeiDFxcsdhUrzkK5Jg9IZyiTsIMvXxKZP&t=2230) for the deployment process—it takes about ten minutes.
+
+## What else can you do?
+1. Add like and comment sections.
+2. Learn how to embed photos and YouTube videos in your posts.
+3. Explore PaperMod's documentation for more useful features.
+
+---
+
+Thanks for reading! If you found this article helpful, please share it with your friends. I'll see you in other posts!
+
+---
+
+# 中文版
 
 如何在一小時內建立你的個人網頁？而且還免費！？
 
@@ -213,215 +426,3 @@ outputs:
 ---
 
 非常感謝你看到這邊，如果這篇文章對你有用，請分享給你的朋友，謝謝！
-
----
-# English Version
-
-How to build your personal website in just one hour? And it’s FREE!?
-
----
-
-## Introduction
-Recently, I’ve been learning a lot and thought it’d be great to share my knowledge online. That’s how I started building my personal website!
-
-I tried setting up a website before but ran into some issues:
-* Good themes cost money.
-* Free themes were hard to customize without lots of HTML/CSS work.
-* Deployment and maintenance were complicated.
-
-After some searching, I found Hugo’s PaperMod Theme. It has a clean layout and solved all my problems. Plus, it’s super easy to use!
-
----
-## What resources did I use?
-You can either follow the resources I used or follow my simplified steps to get your website up quickly.
-
-First, I watched [this YouTube video](https://www.youtube.com/watch?v=hjD9jTi_DQ4&list=PLeiDFxcsdhUrzkK5Jg9IZyiTsIMvXxKZP&index=1&t=2s), which is about 1 hour long. The video guides you through building a basic website using Hugo’s PaperMod theme. By the end, you’ll have a good understanding of Hugo and a working site.
-
-Since the video doesn’t cover advanced features, I also checked out the [PaperMod GitHub page](https://github.com/adityatelange/hugo-PaperMod) for more details.
-
-## Steps
-Now, let’s get into how to set up your website.
-
-The steps below are based on [PaperMod’s installation guide](https://github.com/adityatelange/hugo-PaperMod/wiki/Installation#getting-started-) (using macOS as an example; for other systems, refer to the official docs). Follow these steps, and if you run into issues, you can search for solutions.
-
-### Step 1: Install Homebrew and Hugo
-**Homebrew** is a package manager for macOS that makes it easy to install and manage software.
-
-**Hugo** is a fast, Go-based static site generator that’s easy to use and has many themes, so you can create and deploy a website without touching the code.
-```bash
-# Open Terminal, install Homebrew, and check the installation
-$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-$ brew -v # Displays the Homebrew version (Homebrew 4.3.16)
-
-# Install Hugo using Homebrew and verify it
-$ brew install hugo
-$ hugo version # Displays the Hugo version (hugo v0.133.0...)
-```
-
-### Step 2: Use PaperMod to create your website
-The ```PaperMod``` theme is clean and simple, with features like Profile, Home, Search, and Archive. Creating posts is easy—just add a folder and a markdown file. You can also easily add images, links, and more.
-
-You can see a good example of a [personal website built with PaperMod here](https://arkalim.netlify.app/).
-
-```bash
-# Create your website and navigate to its folder
-$ hugo new site yourWebsiteName --format yaml # Replace yourWebsiteName with your desired name
-$ cd yourWebsiteName
-
-# Initialize git
-$ git init
-
-# Add the PaperMod theme as a git submodule
-$ git submodule add --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
-$ git submodule update --init --recursive
-
-# Keep the submodule up to date without overwriting local changes
-$ git submodule update --remote --merge
-
-# Set PaperMod as your theme
-$ echo "theme: PaperMod" >> hugo.yaml
-
-# Start the server
-$ hugo server
-...
-Built in 49 ms
-Environment: "development"
-Serving pages from disk
-Web Server is available at //localhost:1313/ (bind address 127.0.0.1) 
-```
-Your basic website is now ready! Open your browser and go to ```localhost:1313``` to see it.
-
----
-
-## Customizing Your Website
-Next, you can customize your site. I recommend copying my [hugo.yaml](https://github.com/karta1502545/Chun-Yi-Lee) from GitHub and then adjusting the settings based on the guide below. If you have issues, you can refer to my [GitHub settings](https://github.com/karta1502545) under ```content``` and ```hugo.yaml```.
-
-Here’s what you need to do:
-
-### Set the top-right menu
-```yaml
-menu:
-  main:
-    - identifier: archive
-      name: Archive
-      url: /archive/
-      weight: 10
-    - identifier: blog
-      name: Blog
-      url: /blog/
-      weight: 20
-    - identifier: projects
-      name: Projects
-      url: /projects/
-      weight: 30
-    - identifier: experiences
-      name: Experiences
-      url: /experiences/
-      weight: 40
-    - identifier: search
-      name: Search
-      url: /search/
-      weight: 50
-    - identifier: CV
-      name: CV
-      url: yourCVURL
-      weight: 60
-```
-This is how my website menu is set up. Higher weight means it appears further to the right.
-
-### Set your profile picture and intro on the homepage
-
-Put a photo in the ```static``` directory and specify the path in ```hugo.yaml```.
-I put my profile picture in an ```img``` folder under ```static```.
-
-```yaml
-params:
-  ...
-  # profile-mode
-  profileMode:
-    enabled: true # needs to be explicitly set
-    title: Chun-Yi Lee
-    subtitle: "A curious software engineer who explores all kinds of tech and loves making it easy for others to understand."
-    imageUrl: "img/headPhoto.jpg"
-    imageWidth: 240
-    imageHeight: 260
-    imageTitle: Chun-Yi's handsome headshot
-    buttons:
-      - name: Blog
-        url: blog
-      - name: Tags
-        url: tags
-```
-
-### Create a post in the Blog folder
-
-Create a ```blog``` folder under ```content```, then create a ```firstPost.md``` file and paste the following template.
-
-The structure should look like this:
-```
-content/
-└── blog/
-    └── firstPost.md
-```
-
-```markdown
----
-title: "VideoToText"
-date: "2024-08-18T23:59:48+08:00"
-draft: false
----
-
-## This is my first post!
-Hello, welcome to my first post!
-```
-
-### Set up the Archive page
-The ```Archive``` page lets users view your posts by timeline.
-Create an ```archive.md``` file under ```content``` and paste the following template.
-```markdown
----
-title: "Archive"
-layout: "archive"
-url: "/archive/"
-summary: archive
----
-```
-
-### Set up the Search page
-The ```Search``` page lets users search your post titles and content.
-Create a ```search.md``` file under ```content```, paste the following template, and add a few lines of code in ```hugo.yaml```.
-
-```markdown
----
-title: "Search" # in any language you want
-layout: "search" # necessary for search
-url: "/search/"
-# description: "Description for Search"
-summary: "search"
-placeholder: "type in your keywords.."
----
-```
-
-```yaml
-# (in the end of hugo.yaml, add these lines)
-outputs:
-  home:
-    - HTML
-    - RSS
-    - JSON # necessary for search
-```
-
----
-
-## Deploying Your Website
-Now, publish your website online. 
-I won’t go into details; follow [this tutorial video](https://youtu.be/hjD9jTi_DQ4?list=PLeiDFxcsdhUrzkK5Jg9IZyiTsIMvXxKZP&t=2230) for the deployment process—it takes about ten minutes.
-
-## What else can you do?
-1. Add like and comment sections.
-2. Learn how to embed photos and YouTube videos in your posts.
-3. Explore PaperMod's documentation for more useful features.
-
----
-
-Thanks for reading! If you found this article helpful, please share it with your friends. I'll see you in other posts!
